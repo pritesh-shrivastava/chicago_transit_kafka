@@ -102,7 +102,7 @@ The following directory layout indicates the files that the student is responsib
 │   └── templates
 │       └── status.html
 └── producers
-    ├── connector.py *
+    ├── connector.py 					| Kafka JDBC Source Connector
     ├── models
     │   ├── line.py
     │   ├── producer.py *
@@ -138,7 +138,7 @@ Once docker-compose is ready, the following services will be available:
 | Landoop Kafka Connect UI | [http://localhost:8084](http://localhost:8084) | http://connect-ui:8084 |
 | Landoop Kafka Topics UI | [http://localhost:8085](http://localhost:8085) | http://topics-ui:8085 |
 | Landoop Schema Registry UI | [http://localhost:8086](http://localhost:8086) | http://schema-registry-ui:8086 |
-| Kafka | PLAINTEXT://localhost:9092,PLAINTEXT://localhost:9093,PLAINTEXT://localhost:9094 | PLAINTEXT://kafka0:9092,PLAINTEXT://kafka1:9093,PLAINTEXT://kafka2:9094 |
+| Kafka | PLAINTEXT://localhost:9092, PLAINTEXT://localhost:9093, PLAINTEXT://localhost:9094 | PLAINTEXT://kafka0:9092, PLAINTEXT://kafka1:9093, PLAINTEXT://kafka2:9094 |
 | REST Proxy | [http://localhost:8082](http://localhost:8082/) | http://rest-proxy:8082/ |
 | Schema Registry | [http://localhost:8081](http://localhost:8081/ ) | http://schema-registry:8081/ |
 | Kafka Connect | [http://localhost:8083](http://localhost:8083) | http://kafka-connect:8083 |
