@@ -148,11 +148,11 @@ The following directory layout indicates the files that the student is responsib
     │   │   ├── turnstile_value.json
     │   │   ├── weather_key.json
     │   │   └── weather_value.json
-    │   ├── station.py 					(Kafka client)
+    │   ├── station.py 					| Python Client library
     │   ├── train.py
-    │   ├── turnstile.py 				(Kafka client)
+    │   ├── turnstile.py 				| Python Client library
     │   ├── turnstile_hardware.py
-    │   └── weather.py 					(REST Proxy)
+    │   └── weather.py 					| REST Proxy
     ├── requirements.txt
     └── simulation.py
 ```
