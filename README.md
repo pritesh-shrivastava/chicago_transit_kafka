@@ -8,13 +8,13 @@ The following are required to complete this project:
 
 * Docker
 * Python 3.7
-* Access to a computer with a minimum of 16gb+ RAM and a 4-core CPU to execute the simulation
+* A computer with a minimum of 16gb+ RAM and a 4-core CPU to execute the simulation
 
 ## Description
 
-The Chicago Transit Authority (CTA) has asked us to develop a dashboard displaying system status for its commuters. We have decided to use Kafka and ecosystem tools like REST Proxy and Kafka Connect to accomplish this task.
+Using Kafka and ecosystem tools like REST Proxy and Kafka Connect, we will develop a dashboard to display system status for the commuters of the Chicago Transit Authority (CTA). 
 
-Our architecture will look like so:
+The architecture is given below:
 
 ![Project Architecture](images/diagram.png)
 
