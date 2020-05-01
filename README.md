@@ -2,11 +2,6 @@
 
 Using public data from the [Chicago Transit Authority](https://www.transitchicago.com/data/) we will construct a streaming event pipeline around Apache Kafka, and its ecosystem,that allows us to simulate and display the status of train lines in real time.
 
-We will be able to monitor a website to watch trains move from station to station.
-
-![Final User Interface](images/ui.png)
-
-
 ## Prerequisites
 
 The following are required to complete this project:
@@ -231,3 +226,5 @@ Once the simulation is running, you may hit `Ctrl+C` at any time to exit.
 5. `python server.py`
 
 Once the server is running, you may hit `Ctrl+C` at any time to exit.
+
+We will be able to monitor a website to watch trains move from station to station on an interface ![like this](images/ui.png)
