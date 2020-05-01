@@ -121,7 +121,6 @@ The project consists of two main directories, `producers` and `consumers`.
 The following directory layout indicates the files that the student is responsible for modifying by adding a `*` indicator. Instructions for what is required are present as comments in each file.
 
 ```
-* - Indicates that the student must complete the code in this file
 
 ├── consumers
 │   ├── consumer.py *
@@ -144,16 +143,16 @@ The following directory layout indicates the files that the student is responsib
     │   ├── producer.py *
     │   ├── schemas
     │   │   ├── arrival_key.json
-    │   │   ├── arrival_value.json *
+    │   │   ├── arrival_value.json
     │   │   ├── turnstile_key.json
-    │   │   ├── turnstile_value.json *
+    │   │   ├── turnstile_value.json
     │   │   ├── weather_key.json
-    │   │   └── weather_value.json *
-    │   ├── station.py *
+    │   │   └── weather_value.json
+    │   ├── station.py 					(Kafka client)
     │   ├── train.py
-    │   ├── turnstile.py *
+    │   ├── turnstile.py 				(Kafka client)
     │   ├── turnstile_hardware.py
-    │   └── weather.py *
+    │   └── weather.py 					(REST Proxy)
     ├── requirements.txt
     └── simulation.py
 ```
