@@ -2,14 +2,6 @@
 
 Using public data from the [Chicago Transit Authority](https://www.transitchicago.com/data/) we will construct a streaming event pipeline around Apache Kafka, and its ecosystem,that allows us to simulate and display the status of train lines in real time.
 
-## Prerequisites
-
-The following are required to complete this project:
-
-* Docker
-* Python 3.7
-* A computer with a minimum of 16gb+ RAM and a 4-core CPU to execute the simulation
-
 ## Description
 
 Using Kafka and ecosystem tools like REST Proxy and Kafka Connect, we will develop a dashboard to display system status for the commuters of the Chicago Transit Authority (CTA). 
@@ -27,9 +19,6 @@ Our partners at the CTA have asked that we also send weather readings into Kafka
 ### Step 3: Configure Kafka Connect
 Finally, we need to extract station information from our PostgreSQL database into Kafka. We've decided to use the [Kafka JDBC Source Connector](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/index.html).
 
-To accomplish this, you must complete the following tasks:
-
-1. Complete the code and configuration in `producers/connectors.py`
 	* Please refer to the [Kafka Connect JDBC Source Connector Configuration Options](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/source_config_options.html) for documentation on the options you must complete.
 	* You can run this file directly to test your connector, rather than running the entire simulation.
 	* Make sure to use the [Landoop Kafka Connect UI](http://localhost:8084) and [Landoop Kafka Topics UI](http://localhost:8085) to check the status and output of the Connector.
@@ -105,7 +94,7 @@ The following directory layout indicates the files that the student is responsib
     ├── connector.py 					| Kafka JDBC Source Connector
     ├── models
     │   ├── line.py
-    │   ├── producer.py *
+    │   ├── producer.py					| Python Client library
     │   ├── schemas
     │   │   ├── arrival_key.json
     │   │   ├── arrival_value.json
@@ -192,3 +181,11 @@ Once the simulation is running, you may hit `Ctrl+C` at any time to exit.
 Once the server is running, you may hit `Ctrl+C` at any time to exit.
 
 We will be able to monitor a website to watch trains move from station to station on an interface ![like this](images/ui.png)
+
+## Prerequisites
+
+The following are required to complete this project:
+
+* Docker
+* Python 3.7
+* A computer with a minimum of 16gb+ RAM and a 4-core CPU to execute the simulation
