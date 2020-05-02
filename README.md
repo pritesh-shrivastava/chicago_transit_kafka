@@ -27,10 +27,6 @@ Finally, we need to extract station information from our PostgreSQL database int
 ### Step 4: Configure the Faust Stream Processor
 We will leverage Faust Stream Processing to transform the raw Stations table that we ingested from Kafka Connect. The raw format from the database has more data than we need, and the line color information is not conveniently configured. To remediate this, we're going to ingest data from our Kafka Connect topic, and transform the data.
 
-To accomplish this, you must complete the following tasks:
-
-1. Complete the code and configuration in `consumers/faust_stream.py
-
 #### Watch Out!
 
 You must run this Faust processing application with the following command:
