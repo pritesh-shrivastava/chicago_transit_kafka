@@ -19,10 +19,11 @@ Our partners at the CTA have asked that we also send weather readings into Kafka
 ### Step 3: Configure Kafka Connect
 Finally, we need to extract station information from our PostgreSQL database into Kafka. We've decided to use the [Kafka JDBC Source Connector](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/index.html).
 
-	* Please refer to the [Kafka Connect JDBC Source Connector Configuration Options](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/source_config_options.html) for documentation on the options you must complete.
-	* You can run this file directly to test your connector, rather than running the entire simulation.
-	* Make sure to use the [Landoop Kafka Connect UI](http://localhost:8084) and [Landoop Kafka Topics UI](http://localhost:8085) to check the status and output of the Connector.
-	* To delete a misconfigured connector: `CURL -X DELETE localhost:8083/connectors/stations`
+* Please refer to the [Kafka Connect JDBC Source Connector Configuration Options](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/source_config_options.html) for documentation on the options you must complete.
+* You can run this file directly to test your connector, rather than running the entire simulation.
+* Make sure to use the [Landoop Kafka Connect UI](http://localhost:8084) and [Landoop Kafka Topics UI](http://localhost:8085) to check the status and output of the Connector.
+* To delete a misconfigured connector: `CURL -X DELETE localhost:8083/connectors/stations`
+
 
 ### Step 4: Configure the Faust Stream Processor
 We will leverage Faust Stream Processing to transform the raw Stations table that we ingested from Kafka Connect. The raw format from the database has more data than we need, and the line color information is not conveniently configured. To remediate this, we're going to ingest data from our Kafka Connect topic, and transform the data.
