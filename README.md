@@ -19,10 +19,11 @@ Our partners at the CTA have asked that we also send weather readings into Kafka
 ### Step 3: Configure Kafka Connect
 Finally, we need to extract station information from our PostgreSQL database into Kafka. We've decided to use the [Kafka JDBC Source Connector](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/index.html).
 
-	* Please refer to the [Kafka Connect JDBC Source Connector Configuration Options](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/source_config_options.html) for documentation on the options you must complete.
-	* You can run this file directly to test your connector, rather than running the entire simulation.
-	* Make sure to use the [Landoop Kafka Connect UI](http://localhost:8084) and [Landoop Kafka Topics UI](http://localhost:8085) to check the status and output of the Connector.
-	* To delete a misconfigured connector: `CURL -X DELETE localhost:8083/connectors/stations`
+* Please refer to the [Kafka Connect JDBC Source Connector Configuration Options](https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/source_config_options.html) for documentation on the options you must complete.
+* You can run this file directly to test your connector, rather than running the entire simulation.
+* Make sure to use the [Landoop Kafka Connect UI](http://localhost:8084) and [Landoop Kafka Topics UI](http://localhost:8085) to check the status and output of the Connector.
+* To delete a misconfigured connector: `CURL -X DELETE localhost:8083/connectors/stations`
+
 
 ### Step 4: Configure the Faust Stream Processor
 We will leverage Faust Stream Processing to transform the raw Stations table that we ingested from Kafka Connect. The raw format from the database has more data than we need, and the line color information is not conveniently configured. To remediate this, we're going to ingest data from our Kafka Connect topic, and transform the data.
@@ -35,10 +36,6 @@ You must run this Faust processing application with the following command:
 
 ### Step 5: Configure the KSQL Table
 Next, we will use KSQL to aggregate turnstile data for each of our stations. Recall that when we produced turnstile data, we simply emitted an event, not a count. What would make this data more useful would be to summarize it by station so that downstream applications always have an up-to-date count
-
-To accomplish this, you must complete the following tasks:
-
-1. Complete the queries in `consumers/ksql.py`
 
 #### Tips
 
@@ -74,8 +71,8 @@ The following directory layout indicates the files that the student is responsib
 
 ├── consumers
 │   ├── consumer.py *
-│   ├── faust_stream.py *
-│   ├── ksql.py *
+│   ├── faust_stream.py 				| Faust
+│   ├── ksql.py						| KSQL
 │   ├── models
 │   │   ├── lines.py
 │   │   ├── line.py *
