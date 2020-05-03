@@ -9,10 +9,10 @@
       }, 
       {
           "name" : "station_name",
-           "type" : "string" 
+          "type" : "string" 
       },
       {
-         "name" : "line",
+          "name" : "line",
           "type" : "string"
       }
     ]

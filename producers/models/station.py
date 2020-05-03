@@ -37,13 +37,13 @@ class Station(Producer):
         # replicas
         #
         #
-        topic_name = "com.cta.station.arrivals.{station_name}" # TODO: Come up with a better topic name
+        topic_name = f"com.cta.station.arrivals.{station_name}" 
         super().__init__(
             topic_name,
             key_schema=Station.key_schema,
             value_schema=Station.value_schema, # TODO: Uncomment once schema is defined
-            num_partitions=3,
-            num_replicas=2,
+            #num_partitions=3,
+            #num_replicas=2,
         )
 
         self.station_id = int(station_id)
