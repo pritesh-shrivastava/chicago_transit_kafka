@@ -40,7 +40,7 @@ def configure_connector():
                 "mode": "incrementing",
                 "incrementing.column.name": "stop_id",
                 "topic.prefix": "com.cta",
-                "poll.interval.ms": "100000",
+                "poll.interval.ms": "5000000",
             }
         }),
     )
