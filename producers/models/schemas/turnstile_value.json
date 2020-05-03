@@ -13,7 +13,7 @@
       },
       {
          "name" : "line",
-          "type" : "String"
+          "type" : "string"
       }
     ]
 }
