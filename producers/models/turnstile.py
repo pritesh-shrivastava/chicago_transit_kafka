@@ -21,26 +21,18 @@ class Turnstile(Producer):
         f"{Path(__file__).parents[0]}/schemas/turnstile_value.json"
     )
 
-    def __init__(self, station):
+    def __init__(self, station, create_topic=True):
         """Create the Turnstile"""
-        station_name = (
-            station.name.lower()
-            .replace("/", "_and_")
-            .replace(" ", "_")
-            .replace("-", "_")
-            .replace("'", "")
-        )
-        
         # TODO: Complete the below by deciding on a topic name, number of partitions, and number of
         # replicas
         #
-        topic_name = "com.cta.turnstile.v1"
+        
         super().__init__(
-            topic_name, # TODO: Come up with a better topic name
+            topic_name="com.cta.station.turnstile.v1", # TODO: Come up with a better topic name
             key_schema=Turnstile.key_schema,
             value_schema=Turnstile.value_schema, 
-            num_partitions=3,
-            num_replicas=2
+            num_partitions=5,
+            num_replicas=1
         )
         self.station = station
         self.turnstile_hardware = TurnstileHardware(station)
@@ -50,12 +42,16 @@ class Turnstile(Producer):
         num_entries = self.turnstile_hardware.get_entries(timestamp, time_step)
         #logger.info("turnstile kafka integration incomplete - skipping")
         for entry in range(num_entries):
-            self.producer.produce(
-                topic=self.topic_name,
-                key={"timestamp": int(self.time_millis())},
-                value={
-                    "station_id": self.station.station_id,
-                    "station_name": self.station.name,
-                    "line": self.station.color.name
-                }
-            )
+            try:
+                self.producer.produce(
+                    topic=self.topic_name,
+                    key={"timestamp": self.time_millis()},
+                    value={
+                        "station_id": self.station.station_id,
+                        "station_name": self.station.name,
+                        "line": self.station.color.name
+                    }
+                )
+            except Exception as e:
+                logger.fatal(e)
+                raise e

@@ -89,7 +89,7 @@ class Weather(Producer):
                     "value_schema": json.dumps(Weather.value_schema),
                     "records": [{
                         "value": {
-                            "temperature": int(self.temp),
+                            "temperature": self.temp,
                             "status": self.status.name
                         },
                         "key": {

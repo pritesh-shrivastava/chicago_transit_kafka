@@ -20,7 +20,7 @@ class Producer:
         self,
         topic_name,
         key_schema,
-        value_schema=None,
+        value_schema,
         num_partitions=1,
         num_replicas=1,
     ):
@@ -38,8 +38,8 @@ class Producer:
         #
         #
         self.broker_properties = {
-            "bootstrap.servers": "PLAINTEXT://kafka0:9092,PLAINTEXT://kafka1:9093,PLAINTEXT://kafka2:9094",
-            "schema.registry.url": "http://schema-registry:8081"
+            "bootstrap.servers": ",".join(["PLAINTEXT://localhost:9092"]),
+            "schema.registry.url": "http://localhost:8081"
         }
 
         # If the topic does not already exist, try to create it
