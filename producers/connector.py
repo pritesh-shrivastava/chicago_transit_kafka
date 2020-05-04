@@ -33,14 +33,14 @@ def configure_connector():
                 "value.converter": "org.apache.kafka.connect.json.JsonConverter",
                 "value.converter.schemas.enable": "false",
                 "batch.max.rows": "500",
-                "connection.url": "jdbc:postgresql://localhost:5432/cta",
+                "connection.url": "jdbc:postgresql://127.0.0.1:5432/cta",
                 "connection.user": "cta_admin",
                 "connection.password": "chicago",
                 "table.whitelist": "stations",
                 "mode": "incrementing",
                 "incrementing.column.name": "stop_id",
-                "topic.prefix": "com.cta",
-                "poll.interval.ms": "5000000",
+                "topic.prefix": "com.cta.",
+                "poll.interval.ms": "3600000"
             }
         }),
     )
