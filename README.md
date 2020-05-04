@@ -64,9 +64,9 @@ The following directory layout indicates the files that the student is responsib
 ```
 
 ├── consumers
-│   ├── consumer.py                     | Python Client library
-│   ├── faust_stream.py 				| Faust
-│   ├── ksql.py						    | KSQL
+│   ├── consumer.py                         
+│   ├── faust_stream.py 				    
+│   ├── ksql.py						        
 │   ├── models
 │   │   ├── lines.py
 │   │   ├── line.py                     
@@ -78,10 +78,10 @@ The following directory layout indicates the files that the student is responsib
 │   └── templates
 │       └── status.html
 └── producers
-    ├── connector.py 					| Kafka JDBC Source Connector
+    ├── connector.py 					    | Kafka JDBC Source Connector
     ├── models
     │   ├── line.py
-    │   ├── producer.py					| Python Client library
+    │   ├── producer.py					    | Python Client library
     │   ├── schemas
     │   │   ├── arrival_key.json
     │   │   ├── arrival_value.json
@@ -89,13 +89,14 @@ The following directory layout indicates the files that the student is responsib
     │   │   ├── turnstile_value.json
     │   │   ├── weather_key.json
     │   │   └── weather_value.json
-    │   ├── station.py 					| Python Client library
+    │   ├── station.py 					    | Python Client library
     │   ├── train.py
-    │   ├── turnstile.py 				| Python Client library
+    │   ├── turnstile.py 				    | Python Client library
     │   ├── turnstile_hardware.py
-    │   └── weather.py 					| REST Proxy
+    │   └── weather.py 					    | REST Proxy
     ├── requirements.txt
     └── simulation.py
+    
 ```
 
 ## Running and Testing
