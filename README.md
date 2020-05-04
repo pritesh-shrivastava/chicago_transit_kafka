@@ -47,12 +47,6 @@ Next, we will use KSQL to aggregate turnstile data for each of our stations. Rec
 ### Step 6: Create Kafka Consumers
 With all of the data in Kafka, our final task is to consume the data in the web server that is going to serve the transit status pages to our commuters.
 
-To accomplish this, you must complete the following tasks:
-
-1. Complete the code in `consumers/consumer.py`
-1. Complete the code in `consumers/models/line.py`
-1. Complete the code in `consumers/models/weather.py`
-1. Complete the code in `consumers/models/station.py`
 
 ### Documentation
 In addition to the course content you have already reviewed, you may find the following examples and documentation helpful in completing this assignment:
@@ -70,14 +64,14 @@ The following directory layout indicates the files that the student is responsib
 ```
 
 ├── consumers
-│   ├── consumer.py *
+│   ├── consumer.py                     | Python Client library
 │   ├── faust_stream.py 				| Faust
-│   ├── ksql.py						| KSQL
+│   ├── ksql.py						    | KSQL
 │   ├── models
 │   │   ├── lines.py
-│   │   ├── line.py *
-│   │   ├── station.py *
-│   │   └── weather.py *
+│   │   ├── line.py                     
+│   │   ├── station.py                  
+│   │   └── weather.py                  
 │   ├── requirements.txt
 │   ├── server.py
 │   ├── topic_check.py
